@@ -1,5 +1,5 @@
 /**
- * class for creating dynamic arrays of integers(array that can change its size if needed)
+ * class for creating dynamic arrays of String(array that can change its size if needed)
  */
 public class DynamicStringArray {
 String[] array;
@@ -8,6 +8,7 @@ final int INIT_SIZE=5;
 
 /**
  * constructor method for  creating objects of type DynamicArray with one parameter, size of array
+ * @param parameter which refers to size of array
  */
 public DynamicStringArray(int size){
 	this.array=new String[size];
@@ -25,6 +26,7 @@ public DynamicStringArray(){
 
 /**
  * method that returns the number of elements in array
+ * @return value of count variable
  */
 public int getSize(){
 	return count;
@@ -33,6 +35,7 @@ public int getSize(){
 /**
  * method for adding the new element in array. First it checks if array is already full, 
  * and if that's true, it calls method for resizing array, so it can take new element.
+ * @param new String that will be added to array
  */
 public void add(String newString){
 	if(count==array.length){
@@ -58,6 +61,8 @@ private void resize(){
 
 /**
  * returns the array element with index passed as the parameter
+ * @param integer that refers to index of element in array that will be returned
+ * @return array element(String) whose index is passed as parameter
  */
 public String getAt(int index){
 	if(index<0 || index>=count){
@@ -70,6 +75,7 @@ public String getAt(int index){
 /**
  * method for removing array element with index passed as the parameter
  * (moves all the elements that are on the right side from element with given index for one place to the left).
+ * @param index of array element that will be removed from array
  */
 public void removeAt(int index){
 	if(index<0 || index>=count){
@@ -87,8 +93,8 @@ public void removeAt(int index){
  
  * method that creates and returns new array (of strings) which is populated only with those elements of initial array 
  * that are added after inicialization
+ * @return array of strings
  */
-
 public String[] toArray(){
 	String[] newArray=new String[count];
 	for (int i=0;i<count;i++){
